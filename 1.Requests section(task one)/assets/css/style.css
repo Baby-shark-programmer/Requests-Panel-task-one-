@@ -1,0 +1,253 @@
+/* Imports */
+@import url(./fonts.css);
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+html {
+  /* 62.5% * 16px = 10px(1rem) */
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+/* Varibales */
+:root {
+  /* Color */
+  --c-primary-10: #afcedd;
+  --c-primary-20: #234894;
+  --c-primary-30: #219f95;
+
+  --c-secondary-10: #696969;
+  --c-secondary-20: #1e1e1e;
+
+  --c-white: #fff;
+  --c-dark: #000;
+
+  /* Border radius */
+  --border-radius-normal: 8px;
+  --border-radius-sm: 6px;
+
+  /* Font and Typography */
+  /* fw : font weight */
+  --fw--bold: 700;
+  --fw--medium: 500;
+  --fw--reqular: 400;
+  --fw-tiny: 300;
+
+  /* fs : font size */
+  --fs--lg: 1.9rem;
+  --fs--md: 1.5rem;
+  --fs--normal: 1.3rem;
+  --fs--sm: 1.1rem;
+}
+
+/* Responsive Font and Typography for Large(desktop) devices */
+@media screen and (min-width: 1024px) {
+  :root {
+    --fs--lg: 2.2rem;
+    --fs--md: 1.8rem;
+    --fs--normal: 1.5rem;
+    --fs--sm: 1.2rem;
+  }
+}
+
+/* Basic */
+body {
+  font-size: 1.6rem;
+  color: var(--c-secondary-20);
+  font-weight: var(--fw--reqular);
+}
+
+*,
+body{
+  font-family: "Vazirmatn";
+}
+
+/* Ready class */
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.block {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--fw--bold);
+}
+
+h1 {
+  font-size: var(--fs--lg);
+}
+h2 {
+  font-size: var(--fs--md);
+}
+h3 {
+  font-size: var(--fs--normal);
+}
+
+/* BTN */
+.btn {
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  padding: 13px 8px;
+  display: inline-block;
+  font-size: var(--fs--normal);
+  transition: all 0.3s ease-in-out;
+  font-weight: var(--fw--medium);
+  border-radius: var(--border-radius-normal);
+}
+
+.btn--primary {
+  color: var(--c-white);
+  border: 2px solid var(--c-primary-30);
+  background-color: var(--c-primary-30);
+}
+.btn--primary:hover {
+  color: var(--c-primary-30);
+  background-color: var(--c-white);
+}
+
+/* Number holder */
+.card__number--box {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs--md);
+  color: var(--c-primary-20);
+  font-weight: var(--fw--bold);
+  background-color: var(--c-primary-10);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Start */
+/* --------------- Requests Panel --------------- */
+.requests#requestsPanel {
+  overflow: hidden;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.requests__content {
+  display: grid;
+  gap: 40px;
+  margin-top: 30px;
+  grid-template-columns: 1fr;
+}
+
+.requests__card {
+  max-width: 400px;
+}
+
+/*  ---------- Card header ---------- */
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__header__group {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.card__subtitle {
+  color: var(--c-primary-20);
+}
+
+.card__date {
+  font-size: var(--fs--sm);
+  color: var(--c-secondary-10);
+}
+
+/*  ---------- Card body ---------- */
+.card__body {
+  display: flex;
+  row-gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.card__message {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.card__title {
+  color: var(--c-dark);
+  margin-bottom: -2px;
+  font-size: var(--fs--md);
+}
+
+.card__id {
+  display: inline-block;
+  font-size: var(--fs--sm);
+  color: var(--c-secondary-10);
+}
+
+.card__profile {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.card__user-name {
+  font-weight: var(--fw--bold);
+}
+
+.card__user-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: var(--border-radius-normal);
+}
+
+.card__button .link {
+  color: var(--c-white);
+  font-size: var(--fs--normal);
+  font-weight: var(--fw--medium);
+}
+
+.card__button:hover .link {
+  color: var(--c-primary-30);
+}
+
+/* Responsive Request section for Medium(Taplet, Laptop) devices */
+@media screen and (min-width: 768px) {
+  .requests__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive Request section for Large(Desktop, Large screens) devices */
+@media screen and (min-width: 1024px) {
+  .requests__content {
+    gap: 55px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
